@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun, Aila! ✨ — 25 November 2026</title>
+
+  <!-- Google Fonts: Playfair Display untuk judul elegan & Plus Jakarta Sans untuk teks yang nyaman dibaca -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Konfigurasi palet warna hangat & tipografi kustom Tailwind
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ivory: '#FFFBF7',
+            cream: '#FDF5EE',
+            blush: {
+              50: '#FFF5F7',
+              100: '#FCE7EC',
+              200: '#F8D0DA',
+              300: '#F1ADC0',
+              400: '#E37E9B',
+              500: '#D15B7E',
+            },
+            champagne: {
+              100: '#FBF4E4',
+              200: '#F3E2BE',
+              300: '#E5C687',
+              400: '#D4A857',
+              500: '#B88936',
+            },
+            espresso: {
+              800: '#4A353C',
+              900: '#35242A',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Gaya Kustom untuk Animasi, Glassmorphism, Amplop 3D, Kue & Kartu Flip */
+    :root {
+      --bg-ivory: #FFFBF7;
+      --accent-gold: #D4A857;
+      --accent-rose: #E37E9B;
+      --text-main: #35242A;
+    }
+
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--text-main);
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(252, 231, 236, 0.85) 0%, transparent 45%),
+        radial-gradient(circle at 88% 25%, rgba(243, 226, 190, 0.55) 0%, transparent 42%),
+        radial-gradient(circle at 50% 80%, rgba(252, 231, 236, 0.7) 0%, transparent 50%);
+    }
+
+    /* Kartu Glassmorphism Hangat */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(229, 198, 135, 0.5);
+      box-shadow:
+        0 20px 45px -15px rgba(209, 91, 126, 0.12),
+        0 8px 20px -10px rgba(184, 137, 54, 0.08);
+    }
+
+    /* Gradien Teks Champagne Gold */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #B88936 0%, #DFB76B 45%, #A67525 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Animasi Kilau & Melayang Halus */
+    @keyframes floatSlow {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(2deg);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.55;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    .animate-float-slow {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+
+    .animate-sparkle {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    /* Partikel Kelopak Bunga & Sparkle Latar */
+    .ambient-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      animation: fallDrift linear infinite;
+    }
+
+    @keyframes fallDrift {
+      0% {
+        transform: translateY(-10vh) translateX(0px) rotate(0deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.75;
+      }
+      85% {
+        opacity: 0.65;
+      }
+      100% {
+        transform: translateY(108vh) translateX(35px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Animasi Amplop Pembuka */
+    .envelope-flap {
+      transform-origin: top center;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .envelope-opened .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope-overlay {
+      transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+    }
+
+    .envelope-overlay.hidden-screen {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.04);
+      pointer-events: none;
+    }
+
+    /* Kue Ulang Tahun & Nyala Lilin */
+    @keyframes flickerFlame {
+      0%, 100% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      }
+      25% {
+        transform: translateX(-50%) scale(1.06, 0.96) rotate(2deg);
+      }
+      50% {
+        transform: translateX(-50%) scale(0.95, 1.07) rotate(-1deg);
+      }
+      75% {
+        transform: translateX(-50%) scale(1.04, 0.98) rotate(3deg);
+      }
+    }
+
+    .candle-flame {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      width: 14px;
+      height: 22px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle at 50% 75%, #FFFDF5 0%, #FFE07D 45%, #FF8C3B 85%, rgba(255, 110, 40, 0) 100%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      box-shadow:
+        0 0 14px 4px rgba(255, 200, 90, 0.75),
+        0 0 28px 10px rgba(255, 150, 70, 0.35);
+      animation: flickerFlame 1.35s infinite ease-in-out;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .candle-flame.blown-out {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.1);
+      animation: none;
+    }
+
+    /* Kepulan Asap Saat Lilin Ditiup */
+    @keyframes smokeRise {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.5);
+      }
+      25% {
+        opacity: 0.75;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-35%, -42px) scale(1.8);
+      }
+    }
+
+    .candle-smoke {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: rgba(180, 165, 170, 0.55);
+      filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .candle-smoke.active {
+      animation: smokeRise 1.6s ease-out forwards;
+    }
+
+    /* Kartu Flip 3D (Kartu Harapan) */
+    .flip-card {
+      perspective: 1100px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(0.34, 1.36, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1.5rem;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Animasi Lentera Harapan Terbang ke Langit */
+    @keyframes lanternFloatUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.75);
+      }
+      15% {
+        opacity: 1;
+        transform: translate(-50%, -10px) scale(1);
+      }
+      60% {
+        opacity: 1;
+        transform: translate(-45%, -190px) scale(0.95) rotate(3deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-55%, -380px) scale(0.6) rotate(-4deg);
+      }
+    }
+
+    .lantern-launching {
+      animation: lanternFloatUp 4.2s cubic-bezier(0.22, 0.85, 0.36, 1) forwards;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-blush-200 selection:text-espresso-900">
+
+  <!-- Canvas Confetti Perayaan (Full-screen overlay non-interaktif) -->
+  <canvas id="confetti-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-50"></canvas>
+
+  <!-- Kontainer Partikel Kelopak & Kilau Ambient -->
+  <div id="ambient-container" aria-hidden="true"></div>
+
+  <!-- Tombol Kontrol Musik Melodi Kotak Musik (Mengambang di Pojok Kanan Atas) -->
+  <button
+    id="music-toggle-btn"
+    type="button"
+    aria-label="Putar atau matikan musik ulang tahun"
+    class="fixed top-4 right-4 z-40 hidden items-center gap-2 px-3.5 py-2.5 rounded-full glass-card text-xs sm:text-sm font-medium text-espresso-900 hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer"
+  >
+    <span id="music-icon" class="text-base">🎵</span>
+    <span id="music-label">Musik: Nyala</span>
+  </button>
+
+  <!-- =====================================================================
+       1. LAYAR PEMBUKA INTERAKTIF (AMPLOP KEJUTAN UNTUK AILA)
+  ====================================================================== -->
+  <div
+    id="welcome-screen"
+    class="envelope-overlay fixed inset-0 z-40 flex flex-col items-center justify-center px-4 py-8 bg-gradient-to-br from-[#FFF8F2] via-[#FCEEF2] to-[#F9E6D8]"
+  >
+    <!-- Ornamen Kilau Latar Belakang -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-12 left-8 text-champagne-400 text-2xl animate-sparkle">✦</div>
+      <div class="absolute top-24 right-10 text-blush-400 text-xl animate-sparkle" style="animation-delay: 0.8s;">✿</div>
+      <div class="absolute bottom-20 left-12 text-blush-300 text-2xl animate-sparkle" style="animation-delay: 1.4s;">✦</div>
+      <div class="absolute bottom-16 right-8 text-champagne-400 text-2xl animate-sparkle" style="animation-delay: 0.4s;">✧</div>
+    </div>
+
+    <div class="max-w-md w-full text-center relative z-10">
+      <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-champagne-500 font-semibold mb-3">
+        Undangan Kejutan Spesial
+      </p>
+
+      <!-- Ilustrasi Amplop Digital Estetik -->
+      <div
+        id="envelope-card"
+        class="relative mx-auto w-full max-w-[340px] sm:max-w-[380px] bg-white/90 rounded-3xl border border-champagne-300/70 shadow-[0_24px_60px_rgba(209,91,126,0.18)] overflow-hidden p-6 sm:p-8 animate-float-slow"
+      >
+        <!-- Tutup Amplop Segitiga Atas -->
+        <div
+          class="envelope-flap absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blush-100 to-blush-50 border-b border-champagne-200/80"
+          style="clip-path: polygon(0 0, 100% 0, 50% 88%);"
+        ></div>
+
+        <!-- Segel Lilin Emas Berinisial 'A' -->
+        <div class="relative z-10 mt-6 mb-5 mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-champagne-300 via-champagne-400 to-champagne-500 flex items-center justify-center shadow-lg border-2 border-white/80">
+          <span class="font-serif italic text-2xl font-bold text-white drop-shadow">A</span>
+        </div>
+
+        <!-- Alamat Penerima -->
+        <div class="space-y-2 mt-2">
+          <span class="inline-block px-3 py-1 rounded-full bg-blush-100/80 text-blush-500 text-xs font-semibold tracking-wide">
+            25 November 2026
+          </span>
+          <h1 class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-900 pt-1">
+            Untuk Aila
+          </h1>
+          <p class="text-sm text-espresso-800/80 leading-relaxed">
+            Sebuah catatan kecil penuh doa dan kehangatan di hari istimewamu hari ini.
+          </p>
+        </div>
+
+        <!-- Tombol Buka Kejutan -->
+        <div class="mt-7">
+          <button
+            id="open-surprise-btn"
+            type="button"
+            class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-blush-400 via-blush-500 to-champagne-500 text-white font-semibold text-sm sm:text-base shadow-[0_10px_25px_rgba(209,91,126,0.35)] hover:shadow-[0_14px_30px_rgba(209,91,126,0.45)] hover:brightness-105 active:scale-95 transition-all cursor-pointer"
+          >
+            Buka Kejutan Spesial ✨
+          </button>
+        </div>
+      </div>
+
+      <p class="mt-5 text-xs text-espresso-800/60">
+        Pastikan volume perangkatmu menyala untuk mendengarkan alunan musik lembut 🎶
+      </p>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       KONTEN UTAMA WEBSITE UCAPAN ULANG TAHUN AILA
+  ====================================================================== -->
+  <main id="main-content" class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 space-y-16 sm:space-y-24">
+
+    <!-- ===================================================================
+         2. HERO SECTION
+    ==================================================================== -->
+    <header class="text-center space-y-5 pt-4 sm:pt-8">
+      <!-- Lencana Tanggal -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs sm:text-sm font-semibold text-champagne-500 tracking-wide shadow-sm">
+        <span>✨</span>
+        <span>25 November 2026</span>
+        <span>✨</span>
+      </div>
+
+      <!-- Judul Utama -->
+      <div class="relative inline-block">
+        <span class="hidden sm:inline-block absolute -top-5 -left-8 text-champagne-400 text-2xl animate-sparkle">✦</span>
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-espresso-900 leading-tight">
+          Selamat Ulang Tahun, <br class="sm:hidden" />
+          <span class="text-gold-gradient italic">Aila!</span>
+        </h1>
+        <span class="hidden sm:inline-block absolute -bottom-3 -right-8 text-blush-400 text-2xl animate-sparkle" style="animation-delay: 0.7s;">✦</span>
+      </div>
+
+      <!-- Subjudul Hangat -->
+      <p class="max-w-xl mx-auto text-sm sm:text-base md:text-lg text-espresso-800/85 leading-relaxed px-2">
+        Hari ini semesta ikut tersenyum merayakan bertambahnya usiamu. Semoga setiap langkah di babak baru ini dipenuhi cahaya, ketenangan, dan kebahagiaan yang tulus.
+      </p>
+    </header>
+
+    <!-- ===================================================================
+         3. KUE ULANG TAHUN INTERAKTIF ("TIUP LILIN")
+    ==================================================================== -->
+    <section aria-labelledby="cake-heading" class="glass-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
+      <div class="max-w-lg mx-auto space-y-4">
+        <span class="text-xs uppercase tracking-[0.2em] text-blush-500 font-semibold">
+          Momen Permohonan
+        </span>
+        <h2 id="cake-heading" class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-900">
+          Waktunya Membuat Harapan 🎂
+        </h2>
+        <p id="cake-prompt" class="text-sm sm:text-base text-espresso-800/80">
+          Buat permohonan dalam hati, lalu ketuk lilinnya untuk meniup! 🕯️
+        </p>
+      </div>
+
+      <!-- Area Interaktif Kue Ulang Tahun Berlapis -->
+      <div class="mt-10 mb-6 flex flex-col items-center justify-center">
+        <div
+          id="interactive-cake"
+          role="button"
+          tabindex="0"
+          aria-label="Ketuk kue untuk meniup lilin ulang tahun"
+          class="relative w-64 sm:w-72 pt-10 pb-2 cursor-pointer select-none group focus:outline-none"
+        >
+          <!-- Deretan 3 Lilin di Atas Kue -->
+          <div class="flex justify-center items-end gap-7 sm:gap-9 mb-[-4px] relative z-20">
+            <!-- Lilin 1 -->
+            <div class="relative w-3.5 h-12 rounded-t-md bg-gradient-to-b from-champagne-100 via-blush-200 to-blush-300 border border-champagne-300/70 shadow-sm">
+              <div class="w-0.5 h-2 bg-espresso-900 mx-auto -mt-2"></div>
+              <div class="candle-flame" id="flame-1"></div>
+              <div class="candle-smoke" id="smoke-1"></div>
+            </div>
+            <!-- Lilin 2 (Tengah Sedikit Lebih Tinggi) -->
+            <div class="relative w-3.5 h-14 rounded-t-md bg-gradient-to-b from-champagne-200 via-champagne-300 to-champagne-400 border border-champagne-400/70 shadow-sm">
+              <div class="w-0.5 h-2 bg-espresso-900 mx-auto -mt-2"></div>
+              <div class="candle-flame" id="flame-2" style="animation-delay: 0.25s;"></div>
+              <div class="candle-smoke" id="smoke-2"></div>
+            </div>
+            <!-- Lilin 3 -->
+            <div class="relative w-3.5 h-12 rounded-t-md bg-gradient-to-b from-champagne-100 via-blush-200 to-blush-300 border border-champagne-300/70 shadow-sm">
+              <div class="w-0.5 h-2 bg-espresso-900 mx-auto -mt-2"></div>
+              <div class="candle-flame" id="flame-3" style="animation-delay: 0.5s;"></div>
+              <div class="candle-smoke" id="smoke-3"></div>
+            </div>
+          </div>
+
+          <!-- Tingkat Atas Kue -->
+          <div class="relative mx-auto w-44 sm:w-48 h-14 rounded-t-2xl bg-gradient-to-r from-blush-100 via-blush-50 to-blush-100 border-x border-t border-blush-200 shadow-inner z-10 overflow-hidden">
+            <!-- Lelehan Krim Putih -->
+            <div class="flex justify-around">
+              <span class="w-6 h-4 bg-white rounded-b-full shadow-xs"></span>
+              <span class="w-7 h-5 bg-white rounded-b-full shadow-xs"></span>
+              <span class="w-6 h-3.5 bg-white rounded-b-full shadow-xs"></span>
+              <span class="w-7 h-5 bg-white rounded-b-full shadow-xs"></span>
+              <span class="w-6 h-4 bg-white rounded-b-full shadow-xs"></span>
+            </div>
+            <!-- Hiasan Mutiara Emas -->
+            <div class="absolute bottom-1.5 inset-x-0 flex justify-center gap-3 text-[9px] text-champagne-500">
+              <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+            </div>
+          </div>
+
+          <!-- Tingkat Bawah Kue -->
+          <div class="relative mx-auto w-56 sm:w-64 h-16 rounded-t-2xl rounded-b-lg bg-gradient-to-r from-blush-200 via-blush-100 to-blush-200 border border-blush-300/70 shadow-md z-10 overflow-hidden">
+            <!-- Lelehan Krim Ivory -->
+            <div class="flex justify-around">
+              <span class="w-7 h-4 bg-ivory rounded-b-full"></span>
+              <span class="w-8 h-6 bg-ivory rounded-b-full"></span>
+              <span class="w-7 h-4 bg-ivory rounded-b-full"></span>
+              <span class="w-8 h-5 bg-ivory rounded-b-full"></span>
+              <span class="w-7 h-6 bg-ivory rounded-b-full"></span>
+              <span class="w-7 h-4 bg-ivory rounded-b-full"></span>
+            </div>
+            <!-- Pita Champagne Gold -->
+            <div class="absolute bottom-3 inset-x-0 h-2.5 bg-gradient-to-r from-champagne-300 via-champagne-400 to-champagne-300 opacity-85"></div>
+          </div>
+
+          <!-- Piring Kue Elegan -->
+          <div class="mx-auto w-64 sm:w-72 h-3.5 rounded-full bg-gradient-to-r from-champagne-200 via-white to-champagne-200 border border-champagne-300 shadow-md"></div>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Tiup / Nyalakan Lilin -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button
+          id="blow-candle-btn"
+          type="button"
+          class="px-6 py-3 rounded-full bg-gradient-to-r from-blush-400 to-blush-500 text-white font-semibold text-sm shadow-md hover:brightness-105 active:scale-95 transition-all cursor-pointer"
+        >
+          Tiup Lilin Sekarang 🌬️
+        </button>
+
+        <button
+          id="relight-candle-btn"
+          type="button"
+          class="hidden px-5 py-2.5 rounded-full bg-ivory border border-champagne-400 text-espresso-900 font-medium text-xs sm:text-sm hover:bg-champagne-100 active:scale-95 transition-all cursor-pointer"
+        >
+          Nyalakan Lilin Lagi ✨
+        </button>
+      </div>
+
+      <!-- Pesan Perayaan Setelah Lilin Ditiup -->
+      <div
+        id="wish-celebration-toast"
+        class="hidden mt-6 max-w-md mx-auto p-4 rounded-2xl bg-gradient-to-r from-blush-50 via-champagne-100 to-blush-50 border border-champagne-300 text-espresso-900 shadow-sm transition-all"
+      >
+        <p class="font-serif text-base sm:text-lg font-semibold text-blush-500">
+          Yeay! Semoga semua harapanmu di usia baru ini terkabul, Aila! 🎉
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         4. KARTU SURAT UCAPAN TUNGGAL (BERSIH & SIAP LANGSUNG DIBACA AILA)
+    ==================================================================== -->
+    <section aria-labelledby="letter-heading" class="space-y-6">
+      <div class="text-center space-y-2">
+        <span class="text-xs uppercase tracking-[0.2em] text-champagne-500 font-semibold">
+          Catatan Spesial
+        </span>
+        <h2 id="letter-heading" class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-900">
+          Surat Kecil untuk Aila
+        </h2>
+      </div>
+
+      <!-- Kartu Surat Utama -->
+      <article class="glass-card rounded-3xl p-6 sm:p-10 md:p-12 relative">
+        <!-- Header Surat -->
+        <div class="flex items-center justify-between border-b border-champagne-200/80 pb-4 mb-6 text-xs sm:text-sm text-espresso-800/70">
+          <span class="font-serif italic text-base sm:text-lg text-champagne-500">Untuk Aila,</span>
+          <span>25 November 2026</span>
+        </div>
+
+        <!-- Isi Surat Tunggal -->
+        <div id="letter-body" class="space-y-4 text-sm sm:text-base md:text-[17px] text-espresso-900/90 leading-relaxed whitespace-pre-line">Selamat ulang tahun, Aila.
+
+Di hari spesial 25 November 2026 ini, terima kasih sudah hadir dan membuat hari-hari terasa jauh lebih hangat serta penuh warna. Kehadiranmu selalu punya cara sederhana untuk membawa senyum dan ketenangan.
+
+Semoga di usia yang baru ini, setiap hal baik yang sedang kamu perjuangkan pelan-pelan menemukan jalannya. Semoga kesehatan, tawa tanpa beban, dan kebahagiaan selalu memelukmu erat—hari ini, esok, dan seterusnya.</div>
+
+        <!-- Tanda Tangan Penutup Elegan -->
+        <div class="mt-8 pt-5 border-t border-champagne-200/60 flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs text-espresso-800/60">Dengan penuh doa &amp; hangat,</p>
+            <p id="sender-signature" class="font-serif italic text-lg sm:text-xl font-semibold text-blush-500 mt-0.5">
+              Seseorang yang selalu mendoakan yang terbaik untukmu ✨
+            </p>
+          </div>
+          <span aria-hidden="true" class="hidden sm:inline-flex w-10 h-10 rounded-full bg-blush-50 border border-champagne-200 items-center justify-center text-champagne-500 text-lg">
+            ✿
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================================================================
+         5. KARTU HARAPAN INTERAKTIF (3 KARTU FLIP 3D)
+    ==================================================================== -->
+    <section aria-labelledby="wishes-heading" class="space-y-6">
+      <div class="text-center space-y-2">
+        <span class="text-xs uppercase tracking-[0.2em] text-blush-500 font-semibold">
+          Tiga Doa Terbaik
+        </span>
+        <h2 id="wishes-heading" class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-900">
+          Kartu Harapan untuk Aila
+        </h2>
+        <p class="text-xs sm:text-sm text-espresso-800/75">
+          Ketuk setiap kartu di bawah ini untuk membuka pesan manis di baliknya ✨
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <!-- Kartu 1: Kebahagiaan Tanpa Batas -->
+        <div
+          class="flip-card h-64 sm:h-72 cursor-pointer select-none"
+          role="button"
+          tabindex="0"
+          aria-label="Kartu Harapan 1: Kebahagiaan Tanpa Batas. Ketuk untuk membalik kartu."
+        >
+          <div class="flip-card-inner">
+            <!-- Sisi Depan -->
+            <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-between text-center border-2 border-champagne-200/80 hover:border-blush-300 transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase text-champagne-500">Harapan 01</span>
+              <div class="space-y-2">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-blush-100 flex items-center justify-center text-2xl shadow-xs">
+                  🌷
+                </div>
+                <h3 class="font-serif text-xl font-semibold text-espresso-900 pt-1">
+                  Kebahagiaan Tanpa Batas
+                </h3>
+              </div>
+              <span class="text-xs text-blush-500 font-medium">Ketuk untuk membuka ↻</span>
+            </div>
+
+            <!-- Sisi Belakang -->
+            <div class="flip-card-back bg-gradient-to-br from-blush-400 via-blush-500 to-champagne-500 text-white p-6 flex flex-col items-center justify-center text-center shadow-xl">
+              <span class="text-2xl mb-2">🌷</span>
+              <h4 class="font-serif text-lg font-semibold mb-2">Kebahagiaan Tanpa Batas</h4>
+              <p class="text-xs sm:text-sm leading-relaxed text-white/95">
+                Semoga hari-harimu selalu dipenuhi alasan untuk tersenyum tulus, hati yang damai, dan tawa yang ringan tanpa beban.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 2: Langkah yang Dimudahkan -->
+        <div
+          class="flip-card h-64 sm:h-72 cursor-pointer select-none"
+          role="button"
+          tabindex="0"
+          aria-label="Kartu Harapan 2: Langkah yang Dimudahkan. Ketuk untuk membalik kartu."
+        >
+          <div class="flip-card-inner">
+            <!-- Sisi Depan -->
+            <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-between text-center border-2 border-champagne-200/80 hover:border-blush-300 transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase text-champagne-500">Harapan 02</span>
+              <div class="space-y-2">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-champagne-100 flex items-center justify-center text-2xl shadow-xs">
+                  ✨
+                </div>
+                <h3 class="font-serif text-xl font-semibold text-espresso-900 pt-1">
+                  Langkah yang Dimudahkan
+                </h3>
+              </div>
+              <span class="text-xs text-blush-500 font-medium">Ketuk untuk membuka ↻</span>
+            </div>
+
+            <!-- Sisi Belakang -->
+            <div class="flip-card-back bg-gradient-to-br from-champagne-500 via-champagne-400 to-blush-400 text-white p-6 flex flex-col items-center justify-center text-center shadow-xl">
+              <span class="text-2xl mb-2">✨</span>
+              <h4 class="font-serif text-lg font-semibold mb-2">Langkah yang Dimudahkan</h4>
+              <p class="text-xs sm:text-sm leading-relaxed text-white/95">
+                Semoga setiap mimpi besar, rencana, dan usaha yang kamu rintis di usia baru ini diberi jalan yang lapang dan hasil terbaik.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 3: Selalu Dikelilingi Cinta -->
+        <div
+          class="flip-card h-64 sm:h-72 cursor-pointer select-none"
+          role="button"
+          tabindex="0"
+          aria-label="Kartu Harapan 3: Selalu Dikelilingi Cinta. Ketuk untuk membalik kartu."
+        >
+          <div class="flip-card-inner">
+            <!-- Sisi Depan -->
+            <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-between text-center border-2 border-champagne-200/80 hover:border-blush-300 transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase text-champagne-500">Harapan 03</span>
+              <div class="space-y-2">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-blush-100 flex items-center justify-center text-2xl shadow-xs">
+                  🤍
+                </div>
+                <h3 class="font-serif text-xl font-semibold text-espresso-900 pt-1">
+                  Selalu Dikelilingi Cinta
+                </h3>
+              </div>
+              <span class="text-xs text-blush-500 font-medium">Ketuk untuk membuka ↻</span>
+            </div>
+
+            <!-- Sisi Belakang -->
+            <div class="flip-card-back bg-gradient-to-br from-espresso-900 via-blush-500 to-blush-400 text-white p-6 flex flex-col items-center justify-center text-center shadow-xl">
+              <span class="text-2xl mb-2">🤍</span>
+              <h4 class="font-serif text-lg font-semibold mb-2">Selalu Dikelilingi Cinta</h4>
+              <p class="text-xs sm:text-sm leading-relaxed text-white/95">
+                Semoga kamu selalu dikelilingi orang-orang baik yang tulus menyayangi, menghargai, dan merayakan kehadiranmu apa adanya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         6. KIRIM HARAPAN KE LANGIT (INTERACTIVE WISH LANTERN)
+    ==================================================================== -->
+    <section aria-labelledby="lantern-heading" class="glass-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <!-- Lentera Terbang Animasi (Muncul saat tombol diklik) -->
+      <div
+        id="flying-lantern"
+        aria-hidden="true"
+        class="hidden pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center"
+      >
+        <div class="w-16 h-20 rounded-t-3xl rounded-b-xl bg-gradient-to-b from-champagne-200 via-champagne-400 to-blush-400 shadow-[0_0_35px_rgba(212,168,87,0.9)] border border-white/80 flex items-center justify-center px-2 text-center">
+          <span class="text-[10px] font-serif italic text-espresso-900 font-bold leading-tight line-clamp-2" id="lantern-wish-preview">
+            Harapan Aila
+          </span>
+        </div>
+        <div class="w-4 h-2 bg-champagne-500 rounded-b-md"></div>
+        <span class="text-xs text-champagne-500 mt-1">✨</span>
+      </div>
+
+      <div class="max-w-xl mx-auto text-center space-y-4 relative z-10">
+        <span class="text-xs uppercase tracking-[0.2em] text-champagne-500 font-semibold">
+          Lentera 25 November 2026
+        </span>
+        <h2 id="lantern-heading" class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-900">
+          Kirim Harapan ke Langit 🏮
+        </h2>
+        <p class="text-sm sm:text-base text-espresso-800/80">
+          Tuliskan satu harapan terindah yang paling ingin kamu wujudkan di usia baru ini, lalu terbangkan bersama lentera cahaya.
+        </p>
+
+        <form id="lantern-form" class="mt-6 space-y-4 text-left">
+          <div>
+            <label for="wish-input" class="sr-only">Tuliskan harapanmu, Aila</label>
+            <textarea
+              id="wish-input"
+              rows="3"
+              maxlength="220"
+              required
+              placeholder="Contoh: Semoga tahun ini aku selalu sehat, bahagia, dan semua impianku dimudahkan..."
+              class="w-full p-4 rounded-2xl bg-white/90 border border-champagne-300 text-sm sm:text-base text-espresso-900 placeholder:text-espresso-800/45 focus:outline-none focus:ring-2 focus:ring-blush-300 shadow-xs resize-none"
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-champagne-500 via-champagne-400 to-blush-400 text-white font-semibold text-sm sm:text-base shadow-[0_10px_25px_rgba(184,137,54,0.3)] hover:brightness-105 active:scale-95 transition-all cursor-pointer"
+            >
+              Terbangkan Harapan ✨
+            </button>
+          </div>
+        </form>
+
+        <!-- Konfirmasi Hangat Setelah Harapan Diterbangkan -->
+        <div
+          id="lantern-confirmation"
+          class="hidden mt-6 p-5 rounded-2xl bg-gradient-to-r from-champagne-100/90 via-blush-50/90 to-champagne-100/90 border border-champagne-300 text-center space-y-1.5"
+        >
+          <p class="font-serif text-base sm:text-lg font-semibold text-espresso-900">
+            Harapanmu telah diterbangkan ke langit semesta, Aila ✨
+          </p>
+          <p id="saved-wish-quote" class="text-xs sm:text-sm italic text-blush-500"></p>
+          <p class="text-xs text-espresso-800/75 pt-1">
+            Semoga semesta mengaminkan setiap doa baik yang kamu tulis hari ini.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Penutup -->
+    <footer class="text-center pt-4 pb-8 space-y-2 text-xs sm:text-sm text-espresso-800/65">
+      <p class="font-serif italic text-base text-champagne-500">
+        Selamat Ulang Tahun, Aila — 25 November 2026
+      </p>
+      <p>
+        Dibuat khusus untuk merayakan hari paling spesialmu ✨
+      </p>
+    </footer>
+  </main>
+
+  <!-- =====================================================================
+       JAVASCRIPT: AUDIO KOTAK MUSIK, CONFETTI, KUE, KARTU FLIP & LENTERA HARAPAN
+  ====================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* -------------------------------------------------------------------
+         1. PARTIKEL AMBIENT (KELOPAK BUNGA & KILAU)
+      ------------------------------------------------------------------- */
+      const ambientContainer = document.getElementById('ambient-container');
+      const ambientSymbols = ['✿', '✦', '❀', '✧', '·'];
+      const ambientColors = ['#F1ADC0', '#D4A857', '#E37E9B', '#E5C687'];
+
+      for (let i = 0; i < 18; i++) {
+        const el = document.createElement('span');
+        el.className = 'ambient-particle';
+        el.textContent = ambientSymbols[i % ambientSymbols.length];
+        el.style.left = `${Math.random() * 100}vw`;
+        el.style.fontSize = `${10 + Math.random() * 12}px`;
+        el.style.color = ambientColors[i % ambientColors.length];
+        el.style.animationDuration = `${12 + Math.random() * 14}s`;
+        el.style.animationDelay = `${-Math.random() * 15}s`;
+        ambientContainer.appendChild(el);
+      }
+
+      /* -------------------------------------------------------------------
+         2. SISTEM CONFETTI CANVAS RESPONSIF
+      ------------------------------------------------------------------- */
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      let confettiPieces = [];
+      let confettiAnimating = false;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const confettiColors = ['#E37E9B', '#D4A857', '#F8D0DA', '#F3E2BE', '#D15B7E', '#FFF3D6'];
+
+      function launchConfetti(count = 110) {
+        for (let i = 0; i < count; i++) {
+          confettiPieces.push({
+            x: Math.random() * canvas.width,
+            y: -20 - Math.random() * canvas.height * 0.35,
+            w: 6 + Math.random() * 7,
+            h: 4 + Math.random() * 6,
+            color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+            vx: (Math.random() - 0.5) * 3.5,
+            vy: 2.2 + Math.random() * 3.4,
+            rotation: Math.random() * 360,
+            rotationSpeed: (Math.random() - 0.5) * 8,
+            opacity: 1,
+          });
+        }
+        if (!confettiAnimating) {
+          confettiAnimating = true;
+          animateConfetti();
+        }
+      }
+
+      function animateConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        confettiPieces.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rotation += p.rotationSpeed;
+          if (p.y > canvas.height * 0.8) {
+            p.opacity -= 0.02;
+          }
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rotation * Math.PI) / 180);
+          ctx.globalAlpha = Math.max(0, p.opacity);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        });
+
+        confettiPieces = confettiPieces.filter((p) => p.y < canvas.height + 20 && p.opacity > 0);
+
+        if (confettiPieces.length > 0) {
+          requestAnimationFrame(animateConfetti);
+        } else {
+          confettiAnimating = false;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      /* -------------------------------------------------------------------
+         3. SINTESIS KOTAK MUSIK "HAPPY BIRTHDAY" (WEB AUDIO API)
+      ------------------------------------------------------------------- */
+      let audioCtx = null;
+      let isMusicPlaying = false;
+      let melodyTimer = null;
+      let currentNoteIndex = 0;
+
+      // Frekuensi nada (Hz) untuk melodi "Happy Birthday"
+      const NOTE = {
+        G4: 392.00,
+        A4: 440.00,
+        B4: 493.88,
+        C5: 523.25,
+        D5: 587.33,
+        E5: 659.25,
+        F5: 698.46,
+        G5: 783.99,
+      };
+
+      const happyBirthdayMelody = [
+        { f: NOTE.G4, d: 340 }, { f: NOTE.G4, d: 220 }, { f: NOTE.A4, d: 540 }, { f: NOTE.G4, d: 540 }, { f: NOTE.C5, d: 540 }, { f: NOTE.B4, d: 950 },
+        { f: NOTE.G4, d: 340 }, { f: NOTE.G4, d: 220 }, { f: NOTE.A4, d: 540 }, { f: NOTE.G4, d: 540 }, { f: NOTE.D5, d: 540 }, { f: NOTE.C5, d: 950 },
+        { f: NOTE.G4, d: 340 }, { f: NOTE.G4, d: 220 }, { f: NOTE.G5, d: 540 }, { f: NOTE.E5, d: 540 }, { f: NOTE.C5, d: 540 }, { f: NOTE.B4, d: 540 }, { f: NOTE.A4, d: 950 },
+        { f: NOTE.F5, d: 340 }, { f: NOTE.F5, d: 220 }, { f: NOTE.E5, d: 540 }, { f: NOTE.C5, d: 540 }, { f: NOTE.D5, d: 540 }, { f: NOTE.C5, d: 1200 },
+      ];
+
+      function initAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+      }
+
+      function playMusicBoxNote(freq, durationMs) {
+        if (!audioCtx || !isMusicPlaying) return;
+
+        try {
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const overtone = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+
+          // Suara lembut seperti kotak musik
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+
+          overtone.type = 'triangle';
+          overtone.frequency.setValueAtTime(freq * 2, now);
+
+          const overtoneGain = audioCtx.createGain();
+          overtoneGain.gain.setValueAtTime(0.03, now);
+          overtoneGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
+
+          gainNode.gain.setValueAtTime(0.001, now);
+          gainNode.gain.linearRampToValueAtTime(0.14, now + 0.02);
+          gainNode.gain.exponentialRampToValueAtTime(0.0008, now + Math.max(0.7, durationMs / 1000 + 0.35));
+
+          osc.connect(gainNode);
+          overtone.connect(overtoneGain);
+          overtoneGain.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+
+          osc.start(now);
+          overtone.start(now);
+          osc.stop(now + 1.4);
+          overtone.stop(now + 1.4);
+        } catch (err) {
+          // Penanganan aman bila pemutaran audio terhenti
+        }
+      }
+
+      function playChimeSparkle() {
+        try {
+          initAudioContext();
+          const notes = [523.25, 659.25, 783.99, 1046.5];
+          notes.forEach((freq, idx) => {
+            setTimeout(() => {
+              if (!audioCtx) return;
+              const now = audioCtx.currentTime;
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(freq, now);
+              gain.gain.setValueAtTime(0.001, now);
+              gain.gain.linearRampToValueAtTime(0.11, now + 0.02);
+              gain.gain.exponentialRampToValueAtTime(0.0008, now + 0.8);
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start(now);
+              osc.stop(now + 0.85);
+            }, idx * 95);
+          });
+        } catch (e) {
+          // Abaikan jika browser membatasi audio
+        }
+      }
+
+      function scheduleNextNote() {
+        if (!isMusicPlaying) return;
+        const item = happyBirthdayMelody[currentNoteIndex];
+        playMusicBoxNote(item.f, item.d);
+        currentNoteIndex = (currentNoteIndex + 1) % happyBirthdayMelody.length;
+        const pauseAfterPhrase = currentNoteIndex === 0 ? 1100 : 60;
+        melodyTimer = setTimeout(scheduleNextNote, item.d + pauseAfterPhrase);
+      }
+
+      const musicToggleBtn = document.getElementById('music-toggle-btn');
+      const musicIcon = document.getElementById('music-icon');
+      const musicLabel = document.getElementById('music-label');
+
+      function updateMusicButtonUI() {
+        if (isMusicPlaying) {
+          musicIcon.textContent = '🎵';
+          musicLabel.textContent = 'Musik: Nyala';
+        } else {
+          musicIcon.textContent = '🔇';
+          musicLabel.textContent = 'Musik: Mati';
+        }
+      }
+
+      function startMusic() {
+        try {
+          initAudioContext();
+          if (isMusicPlaying) return;
+          isMusicPlaying = true;
+          updateMusicButtonUI();
+          scheduleNextNote();
+        } catch (e) {
+          isMusicPlaying = false;
+          updateMusicButtonUI();
+        }
+      }
+
+      function stopMusic() {
+        isMusicPlaying = false;
+        clearTimeout(melodyTimer);
+        updateMusicButtonUI();
+      }
+
+      musicToggleBtn.addEventListener('click', () => {
+        if (isMusicPlaying) {
+          stopMusic();
+        } else {
+          startMusic();
+        }
+      });
+
+      /* -------------------------------------------------------------------
+         4. LAYAR PEMBUKA / AMPLOP KEJUTAN
+      ------------------------------------------------------------------- */
+      const welcomeScreen = document.getElementById('welcome-screen');
+      const envelopeCard = document.getElementById('envelope-card');
+      const openSurpriseBtn = document.getElementById('open-surprise-btn');
+
+      openSurpriseBtn.addEventListener('click', () => {
+        envelopeCard.classList.add('envelope-opened');
+        startMusic();
+        launchConfetti(130);
+
+        setTimeout(() => {
+          welcomeScreen.classList.add('hidden-screen');
+          musicToggleBtn.classList.remove('hidden');
+          musicToggleBtn.classList.add('inline-flex');
+        }, 550);
+      });
+
+      /* -------------------------------------------------------------------
+         5. KUE ULANG TAHUN INTERAKTIF ("TIUP LILIN")
+      ------------------------------------------------------------------- */
+      const interactiveCake = document.getElementById('interactive-cake');
+      const blowCandleBtn = document.getElementById('blow-candle-btn');
+      const relightCandleBtn = document.getElementById('relight-candle-btn');
+      const wishCelebrationToast = document.getElementById('wish-celebration-toast');
+      const cakePrompt = document.getElementById('cake-prompt');
+
+      const flames = [
+        document.getElementById('flame-1'),
+        document.getElementById('flame-2'),
+        document.getElementById('flame-3'),
+      ];
+      const smokes = [
+        document.getElementById('smoke-1'),
+        document.getElementById('smoke-2'),
+        document.getElementById('smoke-3'),
+      ];
+
+      let candlesLit = true;
+
+      function blowOutCandles() {
+        if (!candlesLit) return;
+        candlesLit = false;
+
+        flames.forEach((flame) => flame.classList.add('blown-out'));
+        smokes.forEach((smoke) => {
+          smoke.classList.remove('active');
+          void smoke.offsetWidth; // Memicu ulang animasi asap
+          smoke.classList.add('active');
+        });
+
+        cakePrompt.textContent = 'Lilin sudah ditiup! Semoga doa-doamu segera terwujud ✨';
+        blowCandleBtn.classList.add('hidden');
+        relightCandleBtn.classList.remove('hidden');
+        wishCelebrationToast.classList.remove('hidden');
+
+        playChimeSparkle();
+        launchConfetti(125);
+      }
+
+      function relightCandles() {
+        candlesLit = true;
+        flames.forEach((flame) => flame.classList.remove('blown-out'));
+        smokes.forEach((smoke) => smoke.classList.remove('active'));
+
+        cakePrompt.textContent = 'Buat permohonan dalam hati, lalu ketuk lilinnya untuk meniup! 🕯️';
+        blowCandleBtn.classList.remove('hidden');
+        relightCandleBtn.classList.add('hidden');
+        wishCelebrationToast.classList.add('hidden');
+      }
+
+      interactiveCake.addEventListener('click', blowOutCandles);
+      interactiveCake.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          blowOutCandles();
+        }
+      });
+      blowCandleBtn.addEventListener('click', blowOutCandles);
+      relightCandleBtn.addEventListener('click', relightCandles);
+
+      /* -------------------------------------------------------------------
+         6. KARTU HARAPAN 3D FLIP INTERAKTIF
+      ------------------------------------------------------------------- */
+      const flipCards = document.querySelectorAll('.flip-card');
+      flipCards.forEach((card) => {
+        const toggleFlip = () => {
+          card.classList.toggle('flipped');
+        };
+        card.addEventListener('click', toggleFlip);
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFlip();
+          }
+        });
+      });
+
+      /* -------------------------------------------------------------------
+         7. KIRIM HARAPAN KE LANGIT (LENTERA HARAPAN)
+      ------------------------------------------------------------------- */
+      const lanternForm = document.getElementById('lantern-form');
+      const wishInput = document.getElementById('wish-input');
+      const flyingLantern = document.getElementById('flying-lantern');
+      const lanternWishPreview = document.getElementById('lantern-wish-preview');
+      const lanternConfirmation = document.getElementById('lantern-confirmation');
+      const savedWishQuote = document.getElementById('saved-wish-quote');
+
+      lanternForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const wishText = wishInput.value.trim();
+        if (!wishText) return;
+
+        lanternWishPreview.textContent = wishText;
+        flyingLantern.classList.remove('hidden', 'lantern-launching');
+        void flyingLantern.offsetWidth; // Mengulang animasi lentera
+        flyingLantern.classList.add('lantern-launching');
+
+        savedWishQuote.textContent = `"${wishText}"`;
+        lanternConfirmation.classList.remove('hidden');
+        wishInput.value = '';
+
+        playChimeSparkle();
+        launchConfetti(65);
+      });
+    });
+  </script>
+</body>
+</html>
